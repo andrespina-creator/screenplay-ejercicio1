@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="5c2b5fa4d9c7a762b1f28ee23ed5a677d6c35f23d78496ffd54be06605bc70ce.html">Login To Space Advisor</a></span>
+                > <span class="truncate-60"><a
+                    href="d2e9485859f6e1f5372354533b397686133a891684f03ebdcf7235be5da45a93.html">"<id>" Wrong messages in Login </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 01-09-2025 10:11</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Login To Space Advisor </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6c5512236937b92cd7a296b24edb966c2bd94be46b8910f8b129a42d6150eb25.html">1 To 10 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="c721517496ffad35fe9a5d73f07a9bd15eb22da3cff8328e1d9f7ec70655c6b0.html">Login
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="d6814908ed10d1da4a83b054084d75655cd9bd990852dabe92ddf22981193a78.html">Login Failure
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">"" Wrong messages in Login
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given the user open application Space Advisor<br>When enter your credentials "&lt;username&gt;" "&lt;password&gt;"<br>Then the user observes "&lt;testType&gt;" error with messages "&lt;errorMessages&gt;"</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" 1: &quot;TC-05&quot; Wrong messages in Login ({id=TC-05, username=, password=demo123, testType=1, errorMessages=Name is a required field.})" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Given the user open application Space Advisor" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Alan opens the Space advisor home page" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Given the user open application Space Advisor (completed)" width="0"/>
+                <img src="8cc583bda874bfc3f40d84fbe58efd26905f1e3fbd416a3978067cf2d398a82d.png" title=" When enter your credentials &quot;&quot; &quot;demo123&quot;" width="0"/>
+                <img src="8cc583bda874bfc3f40d84fbe58efd26905f1e3fbd416a3978067cf2d398a82d.png" title=" Alan login" width="0"/>
+                <img src="8cc583bda874bfc3f40d84fbe58efd26905f1e3fbd416a3978067cf2d398a82d.png" title=" Alan clicks on Log in page" width="0"/>
+                <img src="190fa05645f6d080038b4a6ddb3420c48694f760253bdbe855e6c1db4676026a.png" title=" Alan enters '' into username field" width="0"/>
+                <img src="06e79cd9474810acc564d22942a1aae94a6988fd4deb687e66b49b26012086e7.png" title=" Alan enters 'demo123' into password field" width="0"/>
+                <img src="1d4e009df3089dc74dd9213abf80a0ebaf97ec805fc104d3e8755f63f1172993.png" title=" Alan clicks on btn log in" width="0"/>
+                <img src="1d4e009df3089dc74dd9213abf80a0ebaf97ec805fc104d3e8755f63f1172993.png" title=" Alan login (completed)" width="0"/>
+                <img src="53447177ff48a83f9cdaa24e6c34240293c4eaa090cfcc48ce72fc7a5c3ef36a.png" title=" When enter your credentials &quot;&quot; &quot;demo123&quot; (completed)" width="0"/>
+                <img src="0d1df77dc9be8672043d98147362c25040ce388e75bd55eca7340cc4553741d3.png" title=" Then the user observes &quot;1&quot; error with messages &quot;Name is a required field.&quot;" width="0"/>
+                <img src="0d1df77dc9be8672043d98147362c25040ce388e75bd55eca7340cc4553741d3.png" title=" Then Error test type: 1 should be iterable containing ['Name is a required field.']" width="0"/>
+                <img src="0d1df77dc9be8672043d98147362c25040ce388e75bd55eca7340cc4553741d3.png" title=" Then the user observes &quot;1&quot; error with messages &quot;Name is a required field.&quot; (completed)" width="0"/>
+                <img src="0d1df77dc9be8672043d98147362c25040ce388e75bd55eca7340cc4553741d3.png" title=" 1: &quot;TC-05&quot; Wrong messages in Login ({id=TC-05, username=, password=demo123, testType=1, errorMessages=Name is a required field.}) (completed)" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" 2: &quot;TC-06&quot; Wrong messages in Login ({id=TC-06, username=demo, password=, testType=2, errorMessages=Password is a required field.})" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Given the user open application Space Advisor" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Alan opens the Space advisor home page" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Given the user open application Space Advisor (completed)" width="0"/>
+                <img src="a7826c1f501b14d8680ff4a7f22ff2d82abde08465635fddb1b7c6b50fed325c.png" title=" When enter your credentials &quot;demo&quot; &quot;&quot;" width="0"/>
+                <img src="a7826c1f501b14d8680ff4a7f22ff2d82abde08465635fddb1b7c6b50fed325c.png" title=" Alan login" width="0"/>
+                <img src="a7826c1f501b14d8680ff4a7f22ff2d82abde08465635fddb1b7c6b50fed325c.png" title=" Alan clicks on Log in page" width="0"/>
+                <img src="58e7a37d019dfdf8d17ba40e3dd95e262686fce4e2a8ff82c936eb17909d8b3a.png" title=" Alan enters 'demo' into username field" width="0"/>
+                <img src="5f0391acc0b7a175e2435dda38e6221813d19f261bd8c8e5bc45f989d8e4386d.png" title=" Alan enters '' into password field" width="0"/>
+                <img src="7ff7dc0b33f4f2911c9c64a8202131774c49b70d21963e03842243d1589b288b.png" title=" Alan clicks on btn log in" width="0"/>
+                <img src="7ff7dc0b33f4f2911c9c64a8202131774c49b70d21963e03842243d1589b288b.png" title=" Alan login (completed)" width="0"/>
+                <img src="7ff7dc0b33f4f2911c9c64a8202131774c49b70d21963e03842243d1589b288b.png" title=" When enter your credentials &quot;demo&quot; &quot;&quot; (completed)" width="0"/>
+                <img src="d2826e8ceddab7d8689cbf7a5b16b5a673b36773d2db807ddbc38165f97bdd77.png" title=" Then the user observes &quot;2&quot; error with messages &quot;Password is a required field.&quot;" width="0"/>
+                <img src="d2826e8ceddab7d8689cbf7a5b16b5a673b36773d2db807ddbc38165f97bdd77.png" title=" Then Error test type: 2 should be iterable containing ['Password is a required field.']" width="0"/>
+                <img src="d2826e8ceddab7d8689cbf7a5b16b5a673b36773d2db807ddbc38165f97bdd77.png" title=" Then the user observes &quot;2&quot; error with messages &quot;Password is a required field.&quot; (completed)" width="0"/>
+                <img src="d2826e8ceddab7d8689cbf7a5b16b5a673b36773d2db807ddbc38165f97bdd77.png" title=" 2: &quot;TC-06&quot; Wrong messages in Login ({id=TC-06, username=demo, password=, testType=2, errorMessages=Password is a required field.}) (completed)" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" 3: &quot;TC-07&quot; Wrong messages in Login ({id=TC-07, username=, password=, testType=3, errorMessages=Name is a required field.,Password is a required field.})" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Given the user open application Space Advisor" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Alan opens the Space advisor home page" width="0"/>
+                <img src="7ed42b9420ad922f3f91902f5658663cfcb5260ea39515d50fd7f392b1c6c8b3.png" title=" Given the user open application Space Advisor (completed)" width="0"/>
+                <img src="8cc583bda874bfc3f40d84fbe58efd26905f1e3fbd416a3978067cf2d398a82d.png" title=" When enter your credentials &quot;&quot; &quot;&quot;" width="0"/>
+                <img src="8cc583bda874bfc3f40d84fbe58efd26905f1e3fbd416a3978067cf2d398a82d.png" title=" Alan login" width="0"/>
+                <img src="8cc583bda874bfc3f40d84fbe58efd26905f1e3fbd416a3978067cf2d398a82d.png" title=" Alan clicks on Log in page" width="0"/>
+                <img src="190fa05645f6d080038b4a6ddb3420c48694f760253bdbe855e6c1db4676026a.png" title=" Alan enters '' into username field" width="0"/>
+                <img src="ed2ac609006caf1c27b1d152f73d5cc64d02dbed5ada8cc2116088c750d32c24.png" title=" Alan enters '' into password field" width="0"/>
+                <img src="1f36d74165448eeced173afc421409e175dac46bf6c9ed611a3acb5698c47fd0.png" title=" Alan clicks on btn log in" width="0"/>
+                <img src="1f36d74165448eeced173afc421409e175dac46bf6c9ed611a3acb5698c47fd0.png" title=" Alan login (completed)" width="0"/>
+                <img src="1f36d74165448eeced173afc421409e175dac46bf6c9ed611a3acb5698c47fd0.png" title=" When enter your credentials &quot;&quot; &quot;&quot; (completed)" width="0"/>
+                <img src="5c5c2d2fb0a4d9adacf60548ccf342372de447dff5943af03b171d553853c5d0.png" title=" Then the user observes &quot;3&quot; error with messages &quot;Name is a required field.,Password is a required field.&quot;" width="0"/>
+                <img src="5c5c2d2fb0a4d9adacf60548ccf342372de447dff5943af03b171d553853c5d0.png" title=" Then Error test type: 3 should be iterable containing ['Name is a required field.', 'Password is a required field.']" width="0"/>
+                <img src="5c5c2d2fb0a4d9adacf60548ccf342372de447dff5943af03b171d553853c5d0.png" title=" Then the user observes &quot;3&quot; error with messages &quot;Name is a required field.,Password is a required field.&quot; (completed)" width="0"/>
+                <img src="5c5c2d2fb0a4d9adacf60548ccf342372de447dff5943af03b171d553853c5d0.png" title=" 3: &quot;TC-07&quot; Wrong messages in Login ({id=TC-07, username=, password=, testType=3, errorMessages=Name is a required field.,Password is a required field.}) (completed): <span class='success-color'>SUCCESS</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.9.0</span>
+</div>
+</body>
+</html>

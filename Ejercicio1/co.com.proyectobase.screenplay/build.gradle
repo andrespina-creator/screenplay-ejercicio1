@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '3.9.0'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.aspectj:aspectjweaver:1.9.22.1'
+    }
+}
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-core:3.9.0'
+    implementation 'net.serenity-bdd:serenity-junit:3.9.0'
+    implementation 'net.serenity-bdd:serenity-cucumber:3.9.0'
+    implementation 'net.serenity-bdd:serenity-screenplay:3.9.0'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:3.9.0'
+
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'com.google.inject:guice:5.1.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.7'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.test {
+    useJUnit()
+    jvmArgs += [
+            '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED',
+            '--add-opens', 'java.base/sun.misc=ALL-UNNAMED'
+    ]
+}
+
+gradle.startParameter.continueOnFailure = true
+

@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Card Deployment in Space Advisor","Card Deployment correctly","ERROR","2025-09-01T16:35:20.1880646-05:00[America/Bogota]","0.0","25.95"
+"Login to Space Advisor","""<id>"" Wrong messages in Login","SUCCESS","2025-09-01T10:11:41.2816821-05:00[America/Bogota]","0.0","27.07"
+"Select Destination in Space Advisor","""<id>"" Select Destination Successful","SUCCESS","2025-09-01T10:41:24.6543005-05:00[America/Bogota]","0.0","25.57"
